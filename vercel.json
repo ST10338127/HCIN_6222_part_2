@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "build/web",
+      "use": "@vercel/static"
+    }
+  ],
+  "buildCommand": "./install-flutter.sh && flutter build web",
+  "installCommand": "npm install -g @vercel/ncc && ncc cache clean"
+}
