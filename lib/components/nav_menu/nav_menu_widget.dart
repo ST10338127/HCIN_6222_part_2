@@ -213,7 +213,7 @@ class _NavMenuWidgetState extends State<NavMenuWidget> {
                           size: 20.0,
                         ),
                         navigateAction: () async {
-                          context.pushNamed(HomeWidget.routeName);
+
                         },
                       ),
                     ),

@@ -70,446 +70,204 @@ class _NotesWidgetState extends State<NotesWidget> {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              wrapWithModel(
-                model: _model.navMenuModel,
-                updateCallback: () => safeSetState(() {}),
-                child: NavMenuWidget(),
-              ),
+
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Container(
-                      width: double.infinity,
-                      height: 100.0,
-                      decoration: BoxDecoration(),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
+
+
+                    Expanded(
+                      child: SingleChildScrollView(
+                        padding: EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // HEADER WITH CREATE + SORT/FILTER
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'My notes ',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.notoSans(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 18.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
+                                Text(
+                                  'Your Notes',
+                                  style: FlutterFlowTheme.of(context).titleMedium,
                                 ),
                                 Row(
-                                  mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Container(
-                                      width: 320.0,
-                                      height: 48.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(24.0),
-                                      ),
-                                      child: Stack(
-                                        alignment:
-                                            AlignmentDirectional(1.0, 0.0),
-                                        children: [
-                                          TextFormField(
-                                            controller: _model.textController,
-                                            focusNode:
-                                                _model.textFieldFocusNode,
-                                            autofocus: false,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              labelStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    font: GoogleFonts.notoSans(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontStyle,
-                                                  ),
-                                              hintText: 'Search...',
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    font: GoogleFonts.notoSans(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontStyle,
-                                                  ),
-                                              enabledBorder: InputBorder.none,
-                                              focusedBorder: InputBorder.none,
-                                              errorBorder: InputBorder.none,
-                                              focusedErrorBorder:
-                                                  InputBorder.none,
-                                              contentPadding:
-                                                  EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  font: GoogleFonts.notoSans(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                            validator: _model
-                                                .textControllerValidator
-                                                .asValidator(context),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 3.0, 0.0),
-                                            child: FlutterFlowIconButton(
-                                              borderRadius: 20.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 40.0,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              icon: Icon(
-                                                FFIcons.ksearch,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 18.0,
-                                              ),
-                                              onPressed: () {
-                                                print('IconButton pressed ...');
-                                              },
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                    DropdownButton<String>(
+                                      value: 'Date',
+                                      underline: SizedBox(),
+                                      onChanged: (value) {
+                                        // Handle sort change
+                                      },
+                                      items: ['Date', 'Title', 'Last Updated'].map((e) {
+                                        return DropdownMenuItem<String>(
+                                          value: e,
+                                          child: Text(e),
+                                        );
+                                      }).toList(),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 3.0, 0.0),
-                                      child: FlutterFlowIconButton(
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .lineColor,
-                                        borderRadius: 20.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        icon: Icon(
-                                          FFIcons.ksettings,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 18.0,
+                                    SizedBox(width: 8.0),
+                                    ElevatedButton.icon(
+                                      onPressed: () {
+                                        // Handle create new note
+                                        print('Create New Note tapped');
+                                      },
+                                      icon: Icon(Icons.add),
+                                      label: Text('New Note'),
+                                      style: ElevatedButton.styleFrom(
+                                        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                                        textStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                          fontWeight: FontWeight.w600,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
                                       ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 3.0, 0.0),
-                                      child: FlutterFlowIconButton(
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .lineColor,
-                                        borderRadius: 20.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        icon: Icon(
-                                          FFIcons.kbell,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 18.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                    ),
-                                  ].divide(SizedBox(width: 16.0)),
+                                  ],
                                 ),
-                              ]
-                                  .addToStart(SizedBox(width: 24.0))
-                                  .addToEnd(SizedBox(width: 24.0)),
+                              ],
                             ),
-                          ),
-                          StyledDivider(
-                            height: 1.0,
-                            thickness: 1.0,
-                            color: FlutterFlowTheme.of(context).lineColor,
-                            lineStyle: DividerLineStyle.dashed,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.all(24.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
+
+                            SizedBox(height: 16.0),
+
+                            // RESPONSIVE GRID WITH POPUP ON TAP
+                            LayoutBuilder(
+                              builder: (context, constraints) {
+                                int itemsPerRow = constraints.maxWidth > 900
+                                    ? 4
+                                    : constraints.maxWidth > 600
+                                    ? 3
+                                    : 2;
+
+                                double itemWidth = (constraints.maxWidth - (itemsPerRow - 1) * 12) / itemsPerRow;
+
+                                final notes = [
+                                  {
+                                    'title': 'Business Analysis: Key Concepts',
+                                    'desc': 'Covers BABOK principles, stakeholder engagement, and requirements gathering techniques.',
+                                    'updated': '2025-06-10',
+                                  },
+                                  {
+                                    'title': 'IT Risk Management Overview',
+                                    'desc': 'Details on risk identification, assessment matrices, and mitigation strategies.',
+                                    'updated': '2025-06-11',
+                                  },
+                                  {
+                                    'title': 'Intro to Research: Methods',
+                                    'desc': 'Explains qualitative vs quantitative approaches, sampling, and ethics in research.',
+                                    'updated': '2025-06-12',
+                                  },
+                                  {
+                                    'title': 'HCI Principles & Design',
+                                    'desc': 'Focus on usability heuristics, UI patterns, and accessibility guidelines.',
+                                    'updated': '2025-06-13',
+                                  },
+                                  {
+                                    'title': 'Business Analysis: Elicitation',
+                                    'desc': 'Covers interviews, workshops, document analysis, and prototyping in elicitation.',
+                                    'updated': '2025-06-14',
+                                  },
+                                  {
+                                    'title': 'IT Risk Response Planning',
+                                    'desc': 'Strategies for risk avoidance, transference, acceptance, and mitigation.',
+                                    'updated': '2025-06-15',
+                                  },
+                                  {
+                                    'title': 'Research Data Analysis',
+                                    'desc': 'Introduction to coding qualitative data and using statistical software.',
+                                    'updated': '2025-06-16',
+                                  },
+                                  {
+                                    'title': 'HCI User Testing',
+                                    'desc': 'Steps for conducting usability testing, A/B testing, and user feedback collection.',
+                                    'updated': '2025-06-17',
+                                  },
+                                ];
+
+                                return Wrap(
+                                  spacing: 12.0,
+                                  runSpacing: 12.0,
+                                  children: notes.map((note) {
+                                    return InkWell(
+                                      onTap: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (_) => AlertDialog(
+                                            title: Text(note['title']!),
+                                            content: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                  'Recent Notes',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts
-                                                            .notoSans(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                ),
-                                                Icon(
-                                                  Icons.add_circle_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 18.0,
-                                                ),
-                                              ].divide(SizedBox(width: 6.0)),
-                                            ),
-                                          ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Text(
-                                                  'View All',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts
-                                                            .notoSans(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                ),
-                                                Icon(
-                                                  FFIcons.kchevronRight,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 16.0,
-                                                ),
+                                                Text('Last Updated: ${note['updated']}'),
+                                                SizedBox(height: 8.0),
+                                                Text(note['desc']!),
                                               ],
                                             ),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.of(context).pop(),
+                                                child: Text('Close'),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                      SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
+                                        );
+                                      },
+                                      child: Container(
+                                        width: itemWidth,
+                                        padding: EdgeInsets.all(12.0),
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                          borderRadius: BorderRadius.circular(10.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).lineColor,
+                                          ),
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            wrapWithModel(
-                                              model: _model.notesCardModel1,
-                                              updateCallback: () =>
-                                                  safeSetState(() {}),
-                                              child: NotesCardWidget(
-                                                folderName: 'Business notes',
-                                                folderSize: 1.0,
-                                                folderFiles: 1,
-                                              ),
+                                            Icon(
+                                              Icons.sticky_note_2_outlined,
+                                              color: FlutterFlowTheme.of(context).primaryText,
+                                              size: 24.0,
                                             ),
-                                            wrapWithModel(
-                                              model: _model.notesCardModel2,
-                                              updateCallback: () =>
-                                                  safeSetState(() {}),
-                                              child: NotesCardWidget(
-                                                folderName: 'Exam Review',
-                                                folderSize: 1.0,
-                                                folderFiles: 1,
+                                            SizedBox(height: 8.0),
+                                            Text(
+                                              note['title']!,
+                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                fontWeight: FontWeight.bold,
                                               ),
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
                                             ),
-                                          ].divide(SizedBox(width: 24.0)),
+                                            SizedBox(height: 4.0),
+                                            Text(
+                                              'Last Updated: ${note['updated']}',
+                                              style: FlutterFlowTheme.of(context).labelSmall,
+                                            ),
+                                            SizedBox(height: 6.0),
+                                            Text(
+                                              note['desc']!,
+                                              style: FlutterFlowTheme.of(context).labelSmall,
+                                              maxLines: 3,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 24.0)),
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            300.0, 0.0, 0.0, 0.0),
-                                        child: wrapWithModel(
-                                          model: _model.newNotesModel,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: NewNotesWidget(
-                                            folderName: 'Add Notes',
-                                            folderSize: 1.0,
-                                            folderFiles: 1,
-                                          ),
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(height: 24.0)),
-                                  ),
-                                ].divide(SizedBox(height: 48.0)),
-                              ),
+                                    );
+                                  }).toList(),
+                                );
+                              },
                             ),
-                          ].divide(SizedBox(width: 24.0)),
+
+                            SizedBox(height: 24.0),
+                          ],
                         ),
                       ),
-                    ),
+                    )
+
                   ],
                 ),
               ),
+
             ],
           ),
         ),
